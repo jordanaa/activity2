@@ -42,7 +42,7 @@
       ],
     "teardownTasks": [
       {
-        "testPath": "main/simpleTestCase/test_cases/fail.fftc"
+        "testPath": "main/simpleTestCase/test_cases/sleep_2min.fftc"
       }
       ]
     }]
