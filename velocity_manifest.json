@@ -1,0 +1,89 @@
+{
+  "defaultData": {
+    "hidden": false,
+    "timeout": 10,
+    "verdictMethod": "EXIT_CODE_VERDICT_PARSING",
+    "commandSequence": [
+      "%file% %parameterNameValuePairList%"
+    ],
+    "parameters": [
+	  { 
+	  "name": "booleanParam",
+	  "type": "BOOLEAN",
+	  "value": true
+	  },
+	   { 
+	  "name": "maskedParam",
+	  "type": "TEXT",
+	  "value": "6tgA3NkRPCMJor6ZZIWzzg==",
+	  "masked": true
+	    },   
+	    { 
+	  "name": "integerParam",
+	  "type": "INTEGER",
+	  "value": 5
+	  },
+	    { 
+	  "name": "doubleParam",
+	  "type": "DOUBLE",
+	  "value": 3.4 
+	    },
+	    { 
+	  "name": "test_custom",
+	  "type": "recipients",
+	  "value":  "World!"
+	    },
+		{
+	  "name": "secretParam",
+	  "type": "SECRET",
+	  "masked": false,
+	  "value": ""
+		}	    
+    ],
+    "customParameterTypes": [
+        {
+          "name": "recipients",
+          "choices": [
+            {
+              "name": "World!",
+              "description": "Our planet"
+            },
+            {
+              "name": "Universe!",
+              "description": "SETI greeting"
+            }
+          ]
+        }
+      ],
+    "executionMessages": {
+      "ok": ".*verified.*",
+      "info": ".*DEBUG.*|.*INFO.*",
+      "warning": ".*WARNING.*",
+      "error": ".*ERROR.*|.*CRITICAL.*"
+    },
+    "verdictParsing": {
+      "passTest": "Finished: PASSED",
+      "passTestIfNotAlreadyFailed": "SUCCESS",
+      "failTestIfPassing": "Failure number \\d+",
+      "failTest": "Finished: FAILED"
+    }
+  },
+  "fileSets": [
+    {
+      "fileNameMatch": ".*\\.py",
+      "language": "python"
+    },
+    {
+      "fileNameMatch": ".*\\.sh",
+      "language": "bash"
+    },
+    {
+      "fileNameMatch": ".*\\.ps1",
+      "language": "powershell"
+    },
+    {
+      "fileNameMatch": ".*\\.bat",
+      "language": "batch"
+    }
+  ]
+}
